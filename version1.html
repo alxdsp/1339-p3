@@ -1,23 +1,31 @@
 <html>
     <head>
     <script>
-    function fibonacci (number) {
-        //if number is 1 or 2, return 1
-        //otherwise return sum of fibonacci of previous two numbers
+    function fibonacci(number) {
+        //define fibonacci if input is lesser than or equal to 1
+        if (input_number <= 1)
+                return 1;} else {
+        //otherwise, if input is greater than 1, this function will run
+        return fibonacci(input_number - 1) + fibonacci(input_number - 2);
     }
-    function compute_and_display () {
-        //get the value from the input
-        //result = fibonacci(input)
+    function compute_and_display() {
+        //get the value from the input and define it as fibonacci(input_number)
+        document.getElementById('input_number').value = fibonacci(input_number)        
         //display result on the webpage
+        return fibonacci(output_goes_here)
     }
     </script>
     <h1>Fibonacci Numbers</h1>
     </head>
     <body>
-    <!--USER INPUTS A NUMBER-->
-        
-    <!--BUTTON TAHT RUNS "compute_and_display()-->
-    
+    <!--Form for user to input a number with a button to run "compute_and_display()" function-->
+    <form action="compute_and_display()" target="output_goes_here">
+        Input a number: <br>
+        <input type ="number" id="input_number"><br>
+        <input type="button" onclick="computer_and_display()" value="Compute and Display">
+        </form>
+        <br>
+        <h3>Fibonacci Number Output:</h3>
         <p id="output_goes_here"></p>
     </body>
 </html>
